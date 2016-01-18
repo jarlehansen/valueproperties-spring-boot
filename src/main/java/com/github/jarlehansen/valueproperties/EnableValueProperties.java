@@ -10,6 +10,6 @@ import java.lang.annotation.Target;
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Import(PropertiesLocatorConfiguration.class)
-public @interface EnablePropertiesLocator {
+public @interface EnableValueProperties {
     String[] profiles() default {};
 }

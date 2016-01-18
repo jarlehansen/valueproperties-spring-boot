@@ -41,10 +41,10 @@ public class PropertiesLocatorConfiguration implements EnvironmentAware, Applica
 
     @PostConstruct
     public void findValueAnnotations() {
-        Map<String, Object> beans = applicationContext.getBeansWithAnnotation(EnablePropertiesLocator.class);
+        Map<String, Object> beans = applicationContext.getBeansWithAnnotation(EnableValueProperties.class);
         if (beans.size() > 0) {
             Object bean = beans.values().iterator().next();
-            EnablePropertiesLocator annotation = AnnotationUtils.findAnnotation(bean.getClass(), EnablePropertiesLocator.class);
+            EnableValueProperties annotation = AnnotationUtils.findAnnotation(bean.getClass(), EnableValueProperties.class);
             String[] profiles = annotation.profiles();
             if (profiles.length == 0 || environment.acceptsProfiles(profiles)) {
                 Reflections reflections = new Reflections(new ConfigurationBuilder()
