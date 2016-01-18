@@ -11,4 +11,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Import(PropertiesLocatorConfiguration.class)
 public @interface EnablePropertiesLocator {
+    String[] profiles() default {};
 }
